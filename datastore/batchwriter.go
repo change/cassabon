@@ -42,7 +42,7 @@ func (bw *batchWriter) Prepare(table string) {
 // Append
 func (bw *batchWriter) Append(path string, ts time.Time, value float64) {
 	if bw.batch == nil {
-		bw.batch = gocql.NewBatch(gocql.LoggedBatch)
+		bw.batch = gocql.NewBatch(gocql.UnloggedBatch)
 	}
 	bw.batch.Query(bw.stmt, path, ts, value)
 	bw.stmtCount++

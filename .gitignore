@@ -41,3 +41,5 @@ _testmain.go
 
 # Mac OSX cruft.
 *DS_Store
+
+*.pem
